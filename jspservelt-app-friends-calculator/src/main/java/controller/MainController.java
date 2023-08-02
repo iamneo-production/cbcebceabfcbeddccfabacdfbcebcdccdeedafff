@@ -51,5 +51,28 @@ public class MainController extends HttpServlet {
 	//Dont change the above lines of code
 	
 //	Start Enterinng your code here...
-	
+public static int findSum(int[] numbers) {
+	int sum = 0;
+	for (int num : numbers) {
+		sum += num;
+	}
+	return sum;
 }
+
+public static int calculate(String str1, String str2) {
+	String combinedStr = str1.toLowerCase() + str2.toLowerCase();
+	int count = 0;
+	int index = 0;
+	while (index != -1) {
+		index = combinedStr.indexOf("friends", index);
+		if (index != -1) {
+			count++;
+			index += 7;
+		}
+	}
+	int length = combinedStr.length() - count * 7;
+	double percentage = ((double) count / (double) (count + length)) * 100;
+	return (int) percentage;
+}
+}
+
